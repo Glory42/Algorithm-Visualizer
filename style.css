@@ -1,24 +1,23 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Dosis', sans-serif;
+    font-display: swap;
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: #f4f4f4;
-    margin: 0;
+    background: linear-gradient(320deg, #eb92eb, #ffef78), #63c9b4;  margin: 0;
     padding: 0;
-  }
-  
-  .container {
+}
+
+.container {
     text-align: center;
     margin-top: 20px;
-  }
-  
-  .controls {
+    color: #eb92eb;
+}
+
+.controls {
     margin: 20px 0;
-  }
-  
-  canvas {
-    border: 1px solid #ccc;
-    background: white;
-  }
-  
+}
+
+canvas {
+    border: 1px solid #ffef78;
+    background: linear-gradient(320deg, #eb92eb, #ffef78), #63c9b4;}
