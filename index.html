@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initail-scale=1.0">
     <title>Algorithm Visualizer | Glory42</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@400;600&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -14,11 +15,14 @@
             <label for="algorithm">Choose an Algorithm</label>
             <select id="algorithm">
                 <option value="bubble">Bubble Sort</option>
+                <option value="quick">Quick Sort</option>
             </select>
+            <label for="speed">Speed:</label>
+            <input type="range" id="speed" min="10" max="500" value="50">
             <button id="start-btn">Start</button>
             <button id="reset-btn">Reset</button>
         </div>
-        <canvas id="visualizer" width="800" height="400" style="border: 1px solid #000;"></canvas>
+        <canvas id="visualizer" width="800" height="400"></canvas>
     </div> 
     <script src="script.js"></script>
 </body>
