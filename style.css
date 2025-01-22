@@ -4,14 +4,14 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: linear-gradient(320deg, #eb92eb, #ffef78), #63c9b4;  margin: 0;
+    background: linear-gradient(320deg, #f601f6, #e96d2f), #071310;  margin: 0;
     padding: 0;
 }
 
 .container {
     text-align: center;
     margin-top: 20px;
-    color: #eb92eb;
+    color: #693169;
 }
 
 .controls {
@@ -19,5 +19,5 @@ body {
 }
 
 canvas {
-    border: 1px solid #ffef78;
-    background: linear-gradient(320deg, #eb92eb, #ffef78), #63c9b4;}
+    border: 1px solid #f01d05;
+    background: linear-gradient(320deg, #c54f14, #eb4df0), #63c9b4;}
