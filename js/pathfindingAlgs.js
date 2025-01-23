@@ -141,7 +141,6 @@ function aStar() {
         ).classList.add('visited');
     }
 
-    // Backtrack to find the shortest path
     let currentNode = endNode;
     while (currentNode.previousNode) {
         const { row, col } = currentNode.previousNode;
@@ -164,7 +163,6 @@ function updateNeighborsAStar(node) {
     });
 }
 
-// Calculate heuristic
 function calculateHeuristic(node, endNode) {
     return Math.abs(node.row - endNode.row) + Math.abs(node.col - endNode.col);
 }
