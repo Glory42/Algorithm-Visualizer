@@ -3,7 +3,8 @@
 A simple Algorithm Visualizer that I made while studying algoritms that helps visualizing the how the algoritms work.
 
 ## ✨ Features
-- Selecting which sorting algorithm to choose.
+- Selecting which type of algorithm to visualize.
+- Selecting which algorithm to visualize.
 - Adjusting the speed of the algorithm.
 
 ## 🚀 How to Run
@@ -34,10 +35,11 @@ Follow these steps to get started with the Algorithm-Visualizer app:
 
 
 ## 💭 How it works
-1. **Select which algorithm to use**.
-2. **Adjust speed**.
-3. **Click start**.
-4. **Watch the algorithm do the sorting**.
+1. **Select which type of algorithm to visualize**.
+2. **Select which algortihm to visualize**.
+3. **Adjust speed**.
+4. **Click start**.
+5. **Watch the algorithm do the sorting**.
 
 ## 🛠️ Project Structure
 
@@ -47,6 +49,5 @@ Follow these steps to get started with the Algorithm-Visualizer app:
 
 ## 🔮 Future Enhancements
 
-- Changing the file structure of the project.
 - Adding more **sorting Algoritms**.
 - Adding **Pathfinding Algoritms**.
