@@ -189,3 +189,54 @@ canvas {
         opacity: 1;
     }
 }
+
+/* Grid container */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(20, 30px); /* 20 columns, each cell is 30x30px */
+    grid-template-rows: repeat(20, 30px); /* 20 rows */
+    gap: 1px;
+    margin: 20px auto;
+    width: fit-content;
+}
+
+/* Grid cell */
+.cell {
+    width: 30px;
+    height: 30px;
+    background-color: #f4f4f4;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+}
+
+/* Cell states */
+.cell.start {
+    background-color: #4caf50; /* Green for start */
+}
+.cell.end {
+    background-color: #f44336; /* Red for end */
+}
+.cell.wall {
+    background-color: #607d8b; /* Grey for walls */
+}
+.cell.visited {
+    background-color: #00bcd4; /* Light blue for visited */
+}
+.cell.path {
+    background-color: #ffeb3b; /* Yellow for the shortest path */
+}
+
+/* Buttons */
+.controls {
+    text-align: center;
+    margin: 20px;
+}
+.btn {
+    padding: 10px 20px;
+    margin: 10px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}

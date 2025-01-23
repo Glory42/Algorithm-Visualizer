@@ -18,15 +18,11 @@
         </nav>
     </header>
     <main>
-        <canvas id="visualizer" width="800" height="400"></canvas>
-        <div>
-            <label for="algorithm">Choose an Algorithm:</label>
-            <select id="algorithm">
-                <option value="dijkstra">Dijkstra's Algorithm</option>
-                <option value="astar">A* Algorithm</option>
-            </select>
-            <button id="start-btn">Start</button>
-            <button id="reset-btn">Reset</button>
+        <div class="grid-container"></div>
+        <div class="controls">
+            <button id="dijkstra-btn" class="btn">Visualize Dijkstra</button>
+            <button id="a-star-btn" class="btn">Visualize A*</button>
+            <button id="clear-grid-btn" class="btn">Clear Grid</button>
         </div>
         <script src="js/pathfinding.js"></script>
     </main>
