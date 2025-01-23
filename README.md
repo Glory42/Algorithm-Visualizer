@@ -51,3 +51,9 @@ Follow these steps to get started with the Algorithm-Visualizer app:
 
 - Adding more **sorting Algoritms**.
 - Adding **Pathfinding Algoritms**.
+
+## 📜 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+---
