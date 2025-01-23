@@ -1,3 +1,9 @@
+document.getElementById('dijkstra-btn').addEventListener('click', dijkstra);
+document.getElementById('a-star-btn').addEventListener('click', aStar);
+document
+    .getElementById('clear-grid-btn')
+    .addEventListener('click', createGrid);
+
 const gridContainer = document.querySelector('.grid-container');
 const rows = 20;
 const cols = 20;
@@ -59,7 +65,7 @@ function handleCellClick(row, col){
 createGrid();
 
 //Dijkstra’s Algorithm
-async function dijkstra() {
+function dijkstra() {
     if(!startNode || !endNode) return alert('Set start and end nodes first!');
 
     const unvisitedNodes = [];
@@ -110,4 +116,55 @@ function getNeighbors(node) {
     return neighbors.filter(neighbor => !neighbor.isWall);
 }
 
+//A* Algorithm
+function aStar() {
+    if (!startNode || !endNode) return alert('Set start and end nodes first!');
 
+    const openSet = [startNode];
+    startNode.distance = 0;
+    startNode.heuristic = calculateHeuristic(startNode, endNode);
+
+    while (openSet.length > 0) {
+        openSet.sort(
+            (a, b) =>
+                a.distance + a.heuristic - (b.distance + b.heuristic)
+        );
+
+        const currentNode = openSet.shift();
+        if (currentNode.isWall) continue;
+        if (currentNode === endNode) break;
+
+        updateNeighborsAStar(currentNode);
+
+        document.querySelector(
+            `.cell[data-row="${currentNode.row}"][data-col="${currentNode.col}"]`
+        ).classList.add('visited');
+    }
+
+    // Backtrack to find the shortest path
+    let currentNode = endNode;
+    while (currentNode.previousNode) {
+        const { row, col } = currentNode.previousNode;
+        document
+            .querySelector(`.cell[data-row="${row}"][data-col="${col}"]`)
+            .classList.add('path');
+        currentNode = currentNode.previousNode;
+    }
+}
+
+function updateNeighborsAStar(node) {
+    const neighbors = getNeighbors(node);
+    neighbors.forEach(neighbor => {
+        const newDistance = node.distance + 1;
+        if (newDistance < neighbor.distance) {
+            neighbor.distance = newDistance;
+            neighbor.heuristic = calculateHeuristic(neighbor, endNode);
+            neighbor.previousNode = node;
+        }
+    });
+}
+
+// Calculate heuristic
+function calculateHeuristic(node, endNode) {
+    return Math.abs(node.row - endNode.row) + Math.abs(node.col - endNode.col);
+}
