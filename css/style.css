@@ -1,23 +1,191 @@
+/* General Reset and Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
-    font-family: 'Dosis', sans-serif;
-    font-display: swap;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to right, #f05b05, #e6ce19); /* Gradient Background */
+    color: #fff;
+    line-height: 1.6;
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: linear-gradient(320deg, #f601f6, #e96d2f), #071310;  margin: 0;
-    padding: 0;
+    justify-content: center;
+    min-height: 100vh;
 }
 
-.container {
+/* Header Styles */
+header {
+    width: 100%;
+    background: #e57009;
+    padding: 15px 0;
     text-align: center;
-    margin-top: 20px;
-    color: #693169;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
 }
 
-.controls {
-    margin: 20px 0;
+header h1 {
+    color: #fff;
+    font-size: 2rem;
+    margin-bottom: 10px;
+    font-weight: bold;
 }
 
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+nav ul li {
+    margin: 0;
+}
+
+nav ul li a {
+    color: #f8f9fa;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 5px 15px;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background: #f1eaea;
+    color: #a8dadc;
+    border-radius: 5px;
+}
+
+/* Main Content Area */
+main {
+    width: 80%;
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1); /* Semi-transparent */
+    border-radius: 10px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+main h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: #f8f9fa;
+}
+
+main p {
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    color: #f8f9fa;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #fff;
+    background: #e63946;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.btn:hover {
+    background: #f8f4f4;
+    transform: scale(1.05);
+}
+
+/* Canvas for Visualizer */
 canvas {
-    border: 1px solid #f01d05;
-    background: linear-gradient(320deg, #c54f14, #eb4df0), #63c9b4;}
+    display: block;
+    margin: 20px auto;
+    border: 3px solid #fff;
+    background: hsl(33, 71%, 61%);
+    border-radius: 8px;
+    width: 100%;
+    max-width: 800px;
+    height: 400px;
+}
+
+/* Add animations */
+@keyframes typewriter {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes blink {
+    from {
+        border-right-color: rgba(255, 255, 255, 0.75);
+    }
+    to {
+        border-right-color: transparent;
+    }
+}
+
+/* Typewriter effect for the heading */
+.typewriter {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 3px solid rgba(255, 255, 255, 0.75);
+    width: 0; /* Start from 0 width to animate */
+    font-size: 2rem;
+    color: #ffffff;
+    margin-bottom: 20px;
+
+    /* Typewriter animation */
+    animation: typewriter 3s steps(40, end) forwards, blink 0.5s step-end 5s;
+    animation-fill-mode: forwards; /* Keeps the final state */
+}
+
+/* Fade-in effect for subtext */
+.fade-in-text {
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out forwards;
+    animation-delay: 3.5s; /* Starts after the typewriter animation */
+    font-size: 1.2rem;
+    color: #ffffff;
+}
+
+/* Fade-in effect for buttons */
+.buttons {
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out forwards;
+    animation-delay: 4s; /* Slightly later than subtext */
+    margin-top: 20px;
+}
+
+/* Button styles */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 10px;
+    background-color: #ffbb00;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
