@@ -50,7 +50,7 @@ Follow these steps to get started with the Algorithm-Visualizer app:
 ## 🔮 Future Enhancements
 
 - Adding more **sorting Algoritms**.
-- Adding **Pathfinding Algoritms**.
+- Fixing **Pathfinding Algoritms**.
 
 ## 📜 License
 
